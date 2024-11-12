@@ -1,31 +1,3 @@
-// import { useState } from "react";
-
-// const RANDOM_QUOTE = "https://dummyjson.com/quotes/random";
-
-// function RandomQuote() {
-//   const [quote, setQuote] = useState(""); // Start with null so we know if the quote is not loaded
-
-//   async function callQuote() {
-//     const response = await fetch(RANDOM_QUOTE);
-//     const jsonresponse = await response.json();
-//     console.log(jsonresponse);
-
-//     setQuote(jsonresponse); // Set the entire response object
-//   }
-
-//   return (
-//     <>
-//       <button onClick={callQuote}>Click to Get Inspired</button>
-
-//       <p>
-//         {quote.quote} - {quote.author}
-//       </p>
-//     </>
-//   );
-// }
-
-// export default RandomQuote;
-
 import { useEffect, useState } from "react";
 
 const RANDOM_QUOTE = "https://dummyjson.com/quotes/random";
@@ -38,6 +10,13 @@ function RandomQuote() {
   useEffect(() => {
     getQuote();
   }, []);
+
+  /**
+   * Fetches a random quote from the DummyJSON API and a random grayscale
+   * image from the Picsum API, and updates the quote and images state
+   * variables with the results. Also sets the isLoading state variable to
+   * false when the data has been fetched.
+   */
 
   async function getQuote() {
     const response = await fetch(RANDOM_QUOTE);

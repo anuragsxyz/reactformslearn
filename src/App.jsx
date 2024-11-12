@@ -1,14 +1,13 @@
 import "./App.css";
 
-import ShoppingListItem from "./ShoppingListItem";
-import LearningEffects from "./states/learningeffects";
-import RandomQuote from "./states/randomQuote";
+import Todos from "./assets/todolist/todolist";
 
 function App() {
   return (
     <>
       {/* <LearningEffects /> */}
-      <RandomQuote />
+      <Todos />
+
       {/* <ShoppingListItem />*/}
     </>
   );
